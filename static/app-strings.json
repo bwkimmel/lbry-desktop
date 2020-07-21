@@ -1271,5 +1271,7 @@
   "LBRY Status": "LBRY Status",
   "Check the status of various LBRY services.": "Check the status of various LBRY services.",
   "Check Status": "Check Status",
+  "Mature content blocked": "Mature content blocked",
+  "Change %settings%": "Change %settings%",
   "--end--": "--end--"
 }
