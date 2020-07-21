@@ -137,12 +137,23 @@
 }
 
 .header__navigation-item--lbry {
+  width: var(--side-nav-width);
   font-weight: var(--font-weight-bold);
-  margin-right: var(--spacing-m);
+  margin-right: var(--spacing-xl);
+
+  // To let the button be left-aligned so the search bar can be lined up with the content
+  .button__content {
+    margin-right: auto;
+  }
 
   .lbry-icon {
     height: 2rem;
     width: 2rem;
+    stroke: transparent;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    margin-right: var(--spacing-m);
   }
 }
 

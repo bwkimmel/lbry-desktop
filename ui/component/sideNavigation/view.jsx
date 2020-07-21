@@ -85,7 +85,7 @@ function SideNavigation(props: Props) {
     }
   }, [setPulseLibrary, purchaseSuccess, doClearPurchasedUriSuccess]);
 
-  function buildLink(path, label, icon, onClick, requiresAuth = false,  isLiteral = false) {
+  function buildLink(path, label, icon, onClick, requiresAuth = false, isLiteral = false) {
     return {
       navigate: !isLiteral ? `$/${path}` : `${path}`,
       label,
@@ -133,11 +133,15 @@ function SideNavigation(props: Props) {
               ...buildLink(PAGES.TAGS_FOLLOWING, __('Your Tags'), ICONS.TAG, null, requireAuthOnPersonalizedActions),
             },
             {
+              ...buildLink(PAGES.LIBRARY, __('Library'), ICONS.LIBRARY),
+            },
+            {
               ...buildLink(PAGES.DISCOVER, __('All Content'), ICONS.DISCOVER),
             },
             {
-              ...buildLink(PAGES.LIBRARY, __('Library'), ICONS.LIBRARY),
+              ...buildLink(PAGES.RABBIT_HOLE, __('The Rabbit Hole'), ICONS.RABBIT_HOLE),
             },
+
             // @if TARGET='web'
             {
               ...(PINNED_URI_1
@@ -163,7 +167,7 @@ function SideNavigation(props: Props) {
                     className={classnames('navigation-link', {
                       'navigation-link--pulse': linkProps.icon === ICONS.LIBRARY && pulseLibrary,
                     })}
-                    activeClass="navigation-link--active"
+                    activeClass={window.location.pathname.includes(linkProps.navigate) ? 'navigation-link--active' : ''}
                   />
                 </li>
               )
@@ -195,12 +199,12 @@ function SideNavigation(props: Props) {
               {
                 ...buildLink(PAGES.WALLET, __('Wallet'), ICONS.WALLET),
               },
-              {
-                ...buildLink(PAGES.REWARDS, __('Rewards'), ICONS.REWARDS),
-              },
-              {
-                ...buildLink(PAGES.INVITE, __('Invites'), ICONS.INVITE),
-              },
+              //   {
+              //     ...buildLink(PAGES.REWARDS, __('Rewards'), ICONS.REWARDS),
+              //   },
+              //   {
+              //     ...buildLink(PAGES.INVITE, __('Invites'), ICONS.INVITE),
+              //   },
               {
                 ...buildLink(PAGES.PUBLISH, __('Publish'), ICONS.PUBLISH),
               },

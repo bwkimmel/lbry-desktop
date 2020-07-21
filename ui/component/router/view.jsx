@@ -162,6 +162,7 @@ function AppRouter(props: Props) {
 
       <Route path={`/`} exact component={HomePage} />
       <Route path={`/$/${PAGES.DISCOVER}`} exact component={DiscoverPage} />
+      <Route path={`/$/${PAGES.RABBIT_HOLE}`} exact component={props => <DiscoverPage rabbitHole {...props} />} />
       <Route path={`/$/${PAGES.AUTH_SIGNIN}`} exact component={SignInPage} />
       <Route path={`/$/${PAGES.AUTH_PASSWORD_RESET}`} exact component={PasswordResetPage} />
       <Route path={`/$/${PAGES.AUTH_PASSWORD_SET}`} exact component={PasswordSetPage} />

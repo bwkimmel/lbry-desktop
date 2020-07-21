@@ -6,6 +6,7 @@ exports.AUTH_PASSWORD_SET = 'reset'; // This is tied to a link in internal-apis 
 exports.BACKUP = 'backup';
 exports.CHANNEL = 'channel';
 exports.DISCOVER = 'discover';
+exports.RABBIT_HOLE = 'rabbithole';
 exports.HOME = 'home';
 exports.HELP = 'help';
 exports.LIBRARY = 'library';

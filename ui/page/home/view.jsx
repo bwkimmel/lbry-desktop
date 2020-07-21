@@ -1,4 +1,5 @@
 // @flow
+import type { RowDataItem } from 'homepage';
 import * as ICONS from 'constants/icons';
 import * as PAGES from 'constants/pages';
 import React from 'react';
@@ -6,19 +7,12 @@ import Page from 'component/page';
 import Button from 'component/button';
 import ClaimTilesDiscover from 'component/claimTilesDiscover';
 import I18nMessage from 'component/i18nMessage';
-
 import getHomepage from 'homepage';
+
 type Props = {
   authenticated: boolean,
   followedTags: Array<Tag>,
   subscribedChannels: Array<Subscription>,
-};
-
-type RowDataItem = {
-  title: string,
-  link?: string,
-  help?: any,
-  options?: {},
 };
 
 function HomePage(props: Props) {
@@ -58,7 +52,7 @@ function HomePage(props: Props) {
           </p>
         </div>
       )}
-      {rowData.map(({ title, link, help, options = {} }) => (
+      {rowData.map(({ title, link, help, options = {}, hideRepostLabel = false }) => (
         <div key={title} className="claim-grid__wrapper">
           <h1 className="section__actions">
             {link ? (
@@ -75,7 +69,7 @@ function HomePage(props: Props) {
             {help}
           </h1>
 
-          <ClaimTilesDiscover {...options} />
+          <ClaimTilesDiscover {...options} hideRepostLabel={hideRepostLabel} />
         </div>
       ))}
     </Page>
