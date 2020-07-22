@@ -133,7 +133,7 @@ function SideNavigation(props: Props) {
               ...buildLink(PAGES.TAGS_FOLLOWING, __('Your Tags'), ICONS.TAG, null, requireAuthOnPersonalizedActions),
             },
             {
-              ...buildLink(PAGES.LIBRARY, __('Library'), ICONS.LIBRARY),
+              ...buildLink(PAGES.LIBRARY, __('Purchased'), ICONS.LIBRARY),
             },
             {
               ...buildLink(PAGES.DISCOVER, __('All Content'), ICONS.DISCOVER),
